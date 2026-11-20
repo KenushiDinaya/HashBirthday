@@ -102,7 +102,7 @@ export default function CakeScreen({ onNext }) {
         <h2 className="font-script mt-1 text-4xl text-bark drop-shadow-sm sm:text-6xl">Make a Wish,</h2>
         <p className="text-gradient-gold font-display text-5xl font-black uppercase leading-tight sm:text-7xl">Hashy</p>
         <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-cocoa/65 sm:text-xs">
-          Tap the candles to blow them out 🎂 | ඉටි පන්දම් අතින් නිවන්න ...
+          Tap the candles to blow them out 🎂 | ඉටි පන්දම් අතින් නිවන්න ... !
         </p>
       </header>
 
