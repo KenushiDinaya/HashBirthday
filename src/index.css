@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 46 100% 95%;
+    --foreground: 28 56% 24%;
+    --border: 36 45% 80%;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-cream font-body text-cocoa;
+    overscroll-behavior: none;
+  }
+
+  ::selection {
+    background: #ffc93c;
+    color: #3e2a14;
+  }
+}
+
+/* ---------- Gradient gold text (shimmering) ---------- */
+.text-gradient-gold {
+  background: linear-gradient(100deg, #7A4416 0%, #B95F00 16%, #E08900 34%, #FFC93C 50%, #E08900 66%, #B95F00 84%, #7A4416 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5.5s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: 220% center;
+  }
+}
+
+/* ---------- Sunflower sway ---------- */
+.animate-sway {
+  animation: sway 5.2s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+.animate-sway-slow {
+  animation: sway 7.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+/* ---------- Falling petals ---------- */
+.petal {
+  position: absolute;
+  top: -6vh;
+  border-radius: 65% 35% 60% 40%;
+  pointer-events: none;
+  background: linear-gradient(135deg, #ffd93d 0%, #ffc93c 45%, #f5a623 100%);
+  box-shadow: inset -2px -2px 4px rgba(224, 137, 0, 0.55), 0 0 6px rgba(255, 201, 60, 0.5);
+  animation: petal-fall var(--dur, 13s) linear var(--delay, 0s) infinite;
+}
+.petal-rose {
+  background: linear-gradient(135deg, #ffb3c1 0%, #ff8fa3 55%, #e0566f 100%);
+  box-shadow: inset -2px -2px 4px rgba(180, 83, 95, 0.5), 0 0 6px rgba(255, 143, 163, 0.45);
+}
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift, 10vw), 112vh, 0) rotate(560deg);
+    opacity: 0.9;
+  }
+}
+
+/* ---------- Candle flame ---------- */
+.flame {
+  transform-origin: 50% 100%;
+  animation: flame-flicker 0.32s ease-in-out infinite;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 50% 78%, #fffbe0 0%, #ffd93d 38%, #ff9a1f 72%, rgba(255, 122, 0, 0) 100%);
+  box-shadow: 0 0 12px 4px rgba(255, 190, 60, 0.75), 0 0 32px 8px rgba(255, 150, 30, 0.35);
+}
+@keyframes flame-flicker {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1) rotate(-2deg);
+  }
+  25% {
+    transform: scaleY(1.18) scaleX(0.88) rotate(2.5deg);
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(1.12) rotate(-3deg);
+  }
+  75% {
+    transform: scaleY(1.12) scaleX(0.92) rotate(1.5deg);
+  }
+}
+
+/* ---------- Heartbeat ---------- */
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.16);
+  }
+  28% {
+    transform: scale(0.98);
+  }
+  42% {
+    transform: scale(1.24);
+  }
+  56% {
+    transform: scale(1);
+  }
+}
+
+/* ---------- Butterfly wing flap ---------- */
+.wing-left,
+.wing-right {
+  transform-box: fill-box;
+}
+.wing-left {
+  transform-origin: 100% 50%;
+  animation: flap-left 0.38s ease-in-out infinite alternate;
+}
+.wing-right {
+  transform-origin: 0% 50%;
+  animation: flap-right 0.38s ease-in-out infinite alternate;
+}
+@keyframes flap-left {
+  from {
+    transform: perspective(180px) rotateY(12deg);
+  }
+  to {
+    transform: perspective(180px) rotateY(68deg);
+  }
+}
+@keyframes flap-right {
+  from {
+    transform: perspective(180px) rotateY(-12deg);
+  }
+  to {
+    transform: perspective(180px) rotateY(-68deg);
+  }
+}
+
+/* ---------- Sparkles ---------- */
+.sparkle-pulse {
+  animation: sparkle-pulse 2.6s ease-in-out infinite;
+}
+@keyframes sparkle-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.65) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(40deg);
+  }
+}
+
+/* ---------- Soft float ---------- */
+.animate-float {
+  animation: float-soft 4.6s ease-in-out infinite;
+}
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* ---------- Rising hearts (final wish) ---------- */
+.rise-heart {
+  position: absolute;
+  bottom: -8vh;
+  pointer-events: none;
+  animation: rise-heart var(--dur, 9s) ease-in var(--delay, 0s) infinite;
+}
+@keyframes rise-heart {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6) rotate(-8deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-112vh) translateX(var(--rx, 5vw)) scale(1.2) rotate(14deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Twinkling star ---------- */
+.star-twinkle {
+  animation: star-twinkle var(--dur, 3s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+/* ---------- Music equaliser bars ---------- */
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 0.9s ease-in-out infinite alternate;
+}
+@keyframes eq {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ---------- Letter paper ruled lines ---------- */
+.paper-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 30px,
+    rgba(92, 58, 30, 0.14) 30px,
+    rgba(92, 58, 30, 0.14) 31px
+  );
+}
+
+/* ---------- Elegant scrollbars ---------- */
+.letter-scroll::-webkit-scrollbar,
+.thin-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+.letter-scroll::-webkit-scrollbar-track,
+.thin-scroll::-webkit-scrollbar-track {
+  background: rgba(92, 58, 30, 0.08);
+  border-radius: 10px;
+}
+.letter-scroll::-webkit-scrollbar-thumb,
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #e0a63c;
+  border-radius: 10px;
+}
+
+/* ---------- Cake icing drips ---------- */
+.icing-drip {
+  height: 13px;
+  background-image: radial-gradient(circle at 11px -1px, #fffdf4 10px, transparent 11px);
+  background-size: 22px 13px;
+  background-repeat: repeat-x;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .petal,
+  .flame,
+  .animate-sway,
+  .animate-sway-slow,
+  .animate-heartbeat,
+  .rise-heart,
+  .sparkle-pulse,
+  .text-gradient-gold,
+  .star-twinkle,
+  .eq-bar {
+    animation: none !important;
+  }
+}
