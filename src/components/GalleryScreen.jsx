@@ -55,11 +55,11 @@ export default function GalleryScreen() {
         {/* Header */}
         <header className="text-center">
           <p className="flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-[0.32em] text-deep sm:text-xs">
-            <Camera size={14} strokeWidth={2.6} /> Chapter Four · Your Memories <Camera size={14} strokeWidth={2.6} />
+            <Camera size={14} strokeWidth={2.6} /> Chapter Four ·  Memories <Camera size={14} strokeWidth={2.6} />
           </p>
-          <h2 className="font-script mt-1 text-4xl text-bark sm:text-6xl">Sunflower Memories</h2>
+          <h2 className="font-script mt-1 text-4xl text-bark sm:text-6xl"> පාට මතක | Memories</h2>
           <p className="mt-1 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-cocoa/65 sm:text-[11px]">
-            <Sparkles size={12} className="text-honey" /> 25 Pieces Of My Heart — Tap Any Photo <Sparkles size={12} className="text-honey" />
+            <Sparkles size={12} className="text-honey" /> 25 Pieces Of My Heart —  අවසන් හසුන ! <Sparkles size={12} className="text-honey" />
           </p>
         </header>
 

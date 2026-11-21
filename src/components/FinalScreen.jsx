@@ -151,7 +151,7 @@ export default function FinalScreen({ onReplay }) {
           Love You Forever
         </motion.h1>
         <p className="font-display mt-0.5 text-[10px] font-bold uppercase tracking-[0.4em] text-butter/70 sm:text-xs">
-          Hashy · ළමයෝ <span className="text-[#FF8FA3]">❤</span>
+          මේක මගෙ එකම වගේම අන්තිම ලියුම වේවී ළමයෝ <span className="text-[#FF8FA3]">❤</span>
         </p>
 
         {/* Final words */}

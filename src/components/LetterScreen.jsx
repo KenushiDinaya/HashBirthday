@@ -67,7 +67,7 @@ export default function LetterScreen({ onNext }) {
                 <MailOpen size={15} strokeWidth={2.6} /> Chapter Three · The Letter <MailOpen size={15} strokeWidth={2.6} />
               </p>
               <h2 className="font-script mt-2 text-5xl leading-tight text-bark sm:text-7xl">A Letter for You</h2>
-              <p className="font-sinhala mt-1 text-sm font-semibold text-cocoa/80 sm:text-lg">ළමයෝ, මේ ඔයාට විශේෂ ලිපියක් 💌</p>
+              <p className="font-sinhala mt-1 text-sm font-semibold text-cocoa/80 sm:text-lg">ළමයෝ, මේක මගෙ එකම වගේම අන්තිම ලියුම වේවී  💌</p>
 
               {/* Envelope */}
               <motion.button
